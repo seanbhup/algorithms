@@ -15,7 +15,7 @@ function sumPrimes(num) {
       sum += i;
     }
   }
-  retun sum;
+  return sum;
 }
 console.time("sumPrimes");
 console.log(sumPrimes(20));
