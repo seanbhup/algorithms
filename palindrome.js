@@ -4,8 +4,8 @@ function findPali(start,end){
 		for(var j = start; j <= end; j++){
 			var number = i * j;
 			var string = number.toString();
-			var stringRev = string.split("").reverse().join("");
-			if(string == stringRev){
+			var stringReversed = string.split("").reverse().join("");
+			if(string == stringReversed){
 				paliArray.push(Number(number));
 			}
 		}
