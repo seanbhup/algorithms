@@ -21,80 +21,148 @@
 }
 
 console.log(convertPhone('992-1231232--d34f-1562234()()()(23423432a2-7x8-92a0'));
-
-/ Takes a phone number and determines if it is correctly formatted. Returns the phone number in a normalized format.
-
-function formatter(input) {
- let formatted = input.match(/\d/g);
-
- if (formatted.length > 10) {
-   formatted.splice(0, 1);
- }
- formatted.splice(3, 0, '-');
- formatted.splice(7, 0, '-');
-
- return formatted.join('');
-}
-
-function convertPhone(number) {
- let input1 = /^\d{3}\-\d{3}\-\d{4}$/.test(number);         // 555-555-5555
- let input2 = /^\d{3}\s\d{3}\s\d{4}$/.test(number);         // 555 555 5555
- let input3 = /^\(\d{3}\)\d{3}\-\d{4}$/.test(number);       // (555)555-5555
- let input4 = /^\d{3}\s\d{3}\-\d{4}$/.test(number);         // 555 555-5555
- let input5 = /^\(\d{3}\)\s\d{3}\-\d{4}$/.test(number);     // (555) 555-5555
- let input6 = /^\d\-\d{3}\-\d{3}\-\d{4}$/.test(number);     // 1-555-555-5555
- let input7 = /^\(\d\)\d{3}\-\d{3}\-\d{4}$/.test(number);   // (1)555-555-5555
- let input8 = /^\(\d\)\s\d{3}\-\d{3}\-\d{4}$/.test(number); // (1) 555-555-5555
- let input9 = /^\d{10}$/.test(number);                      // 5555555555
- let input10 = /^\d{11}$/.test(number);                     // 15555555555
-
-
- if (input1) {
-   return number;
-
- } else if (input2) {
-   return formatter(number);
-
- } else if (input3) {
-   return formatter(number);
-
- } else if (input4) {
-   return formatter(number);
-
- } else if (input5) {
-   return formatter(number);
-
- } else if (input6) {
-   return formatter(number);
-
- } else if (input7) {
-   return formatter(number);
-
- } else if (input8) {
-   return formatter(number);
-
- } else if (input9) {
-   return formatter(number);
-
- } else if (input10) {
-   return formatter(number);
-
- } else {
-   return 'Invalid number';
- }
-}
-
-// var number = '555-555-5555';
-var number = '555 555 5555';
-// var number = '(555)555-5555';
-// var number = '555 555-5555';
-// var number = '(555) 555-5555';
-// var number = '1-555-555-5555';
-// var number = '(1)555-555-5555';
-// var number = '(1) 555-555-5555';
-// var number = '5555555555';
-// var number = '15555555555';
-convertPhone(number);
+//
+// / Takes a phone number and determines if it is correctly formatted. Returns the phone number in a normalized format.
+//
+// function formatter(input) {
+//  let formatted = input.match(/\d/g);
+//
+//  if (formatted.length > 10) {
+//    formatted.splice(0, 1);
+//  }
+//  formatted.splice(3, 0, '-');
+//  formatted.splice(7, 0, '-');
+//
+//  return formatted.join('');
+// }
+//
+// function convertPhone(number) {
+//  let input1 = /^\d{3}\-\d{3}\-\d{4}$/.test(number);         // 555-555-5555
+//  let input2 = /^\d{3}\s\d{3}\s\d{4}$/.test(number);         // 555 555 5555
+//  let input3 = /^\(\d{3}\)\d{3}\-\d{4}$/.test(number);       // (555)555-5555
+//  let input4 = /^\d{3}\s\d{3}\-\d{4}$/.test(number);         // 555 555-5555
+//  let input5 = /^\(\d{3}\)\s\d{3}\-\d{4}$/.test(number);     // (555) 555-5555
+//  let input6 = /^\d\-\d{3}\-\d{3}\-\d{4}$/.test(number);     // 1-555-555-5555
+//  let input7 = /^\(\d\)\d{3}\-\d{3}\-\d{4}$/.test(number);   // (1)555-555-5555
+//  let input8 = /^\(\d\)\s\d{3}\-\d{3}\-\d{4}$/.test(number); // (1) 555-555-5555
+//  let input9 = /^\d{10}$/.test(number);                      // 5555555555
+//  let input10 = /^\d{11}$/.test(number);                     // 15555555555
+//
+//
+//  if (input1) {
+//    return number;
+//
+//  } else if (input2) {
+//    return formatter(number);
+//
+//  } else if (input3) {
+//    return formatter(number);
+//
+//  } else if (input4) {
+//    return formatter(number);
+//
+//  } else if (input5) {
+//    return formatter(number);
+//
+//  } else if (input6) {
+//    return formatter(number);
+//
+//  } else if (input7) {
+//    return formatter(number);
+//
+//  } else if (input8) {
+//    return formatter(number);
+//
+//  } else if (input9) {
+//    return formatter(number);
+//
+//  } else if (input10) {
+//    return formatter(number);
+//
+//  } else {
+//    return 'Invalid number';
+//  }
+// }
+//
+// // var number = '555-555-5555';
+// var number = '555 555 5555';
+// // var number = '(555)555-5555';
+// // var number = '555 555-5555';
+// // var number = '(555) 555-5555';
+// // var number = '1-555-555-5555';
+// // var number = '(1)555-555-5555';
+// // var number = '(1) 555-555-5555';
+// // var number = '5555555555';
+// // var number = '15555555555';
+// convertPhone(number);
+//
+// var myLettersObject = {
+//  "a":2,
+//  "b":2,
+//  "c":2,
+//  "d":3,
+//  "e":3,
+//  "f":3,
+//  "g":4,
+//  "h":4,
+//  "i":4,
+//  "j":5,
+//  "k":5,
+//  "l":5,
+//  "m":6,
+//  "n":6,
+//  "o":6,
+//  "p":7,
+//  "q":7,
+//  "r":7,
+//  "s":7,
+//  "t":8,
+//  "u":8,
+//  "v":8,
+//  "w":9,
+//  "x":9,
+//  "y":9,
+//  "z":9,
+// }
+// var phoneStr = "1-900-acdc-4life"
+// var countryCode = false;
+//
+// function convertPhone(phoneStr){
+//  // console.log(phoneStr);
+//  var tenOr11Characters;
+//  var nonAlphaNumericRemoved = phoneStr.match(/\w/g);
+//  if(nonAlphaNumericRemoved.length < 10){
+//    console.log("error stoopid")
+//  }
+//  else if(nonAlphaNumericRemoved.indexOf("1") === 0){
+//    tenOr11Characters = nonAlphaNumericRemoved.slice(0,11);
+//    countryCode = true;
+//  }else{
+//    tenOr11Characters = nonAlphaNumericRemoved.slice(0,10);
+//  }
+//  // console.log(tenOr11Characters);
+//  var phoneNumber =[];
+//  tenOr11Characters.map((currentValue,currentIndex)=>{
+//    if(isNaN(currentValue)){
+//      phoneNumber.push(myLettersObject[currentValue]);
+//    }
+//    else{
+//      phoneNumber.push(currentValue);
+//    }
+//  })
+//  if(countryCode){
+//    phoneNumber.splice(1,0,'-')
+//    phoneNumber.splice(5,0,'-')
+//    phoneNumber.splice(9,0,'-')
+//  }
+//  else{
+//    phoneNumber.splice(3,0,'-')
+//    phoneNumber.splice(7,0,'-')
+//  }
+//  return phoneNumber.join("");
+// }
+// // console.log(phoneNumber);
+// console.log(convertPhone(phoneStr));
 
         </script>
 
